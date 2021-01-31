@@ -1,0 +1,8 @@
+rootProject.name = 'Microservices-demo'
+include 'infrastructure:config-server'
+include 'infrastructure:eureka-server'
+include 'infrastructure:api-gateway'
+include 'commons'
+include 'business-services:give-hello-api'
+include 'business-services:say-hello-api'
+

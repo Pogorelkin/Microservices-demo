@@ -1,0 +1,15 @@
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass.set("com.pog.EurekaServerApplication")
+}
+
+dependencies {
+    compile libpacks.spring_common
+    compile libpacks.cloud_eureka_server
+    compile libpacks.cloud_config_client
+}

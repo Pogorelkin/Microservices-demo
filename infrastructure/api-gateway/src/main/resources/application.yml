@@ -1,0 +1,15 @@
+server:
+  port: 9094
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: true
+
+zuul:
+  routes:
+    say-hello-api: /say-hello/**
+    give-hello-api: /give-hello/**

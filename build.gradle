@@ -1,0 +1,61 @@
+buildscript {
+    ext {
+        dependencyManagementPluginVersion = '1.0.11.RELEASE'
+        springBootVersion = '2.4.2'
+        springCloudBomVersion = '2020.0.1'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url("mvnrepository.com")
+        }
+    }
+    dependencies {
+        classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'application'
+}
+
+subprojects {
+    group = "com.pog"
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'application'
+    apply from: "${rootProject.projectDir}/libraries.gradle"
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '6.7.1'
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    compileJava.options.encoding = 'UTF-8'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        testCompile libpacks.testing
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudBomVersion}"
+        }
+    }
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+    }
+}

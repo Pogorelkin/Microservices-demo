@@ -1,0 +1,11 @@
+version '0.0.1-SNAPSHOT'
+
+application {
+    mainClass.set("com.epam.hw.netflix.ConfigServerApplication")
+}
+
+
+dependencies {
+    compile libpacks.cloud_config_server
+    compile libpacks.spring_common
+}
