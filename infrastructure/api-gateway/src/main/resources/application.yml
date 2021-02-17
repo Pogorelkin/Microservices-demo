@@ -1,5 +1,12 @@
 server:
-  port: 9094
+  port: 8282
+
+euerka:
+  instance:
+    hostname: machine_ip
+
+  client:
+    register-with-eureka: false
 
 endpoints:
   restart:

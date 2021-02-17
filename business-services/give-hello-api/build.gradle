@@ -7,6 +7,9 @@ application {
 dependencies {
     compile project(':commons')
     compile libpacks.spring_common
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.2'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.2.6.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-netflix-eureka-client', version: '3.0.1'
     compile libpacks.cloud_common
     compile libpacks.cloud_config_client
 }
