@@ -1,2 +1,9 @@
+spring:
+  application:
+    name: give-hello-api
 server:
-  port: 8085
+  port: 0
+
+eureka:
+  client:
+    fetchRegistry: true

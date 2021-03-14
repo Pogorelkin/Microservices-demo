@@ -17,7 +17,7 @@ public class HelloAPIController implements GiveHelloAPI {
     }
 
     @Override
-    @GetMapping("/ow-hello")
+    @GetMapping("/")
     public String sayHello() {
         return "Ow, hello! I'm number " + getNumberService.getNumberOfService() + " :)" ;
     }
